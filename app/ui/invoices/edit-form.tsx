@@ -18,9 +18,7 @@ export default function EditInvoiceForm({
 	invoice: InvoiceForm;
 	customers: CustomerField[];
 }) {
-	const updateInvoiceWithId = async (formData: FormData) => {
-		await updateInvoice(invoice.id, formData);
-	};
+	const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 
 	return (
 		<form action={updateInvoiceWithId}>
